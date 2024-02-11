@@ -1,0 +1,17 @@
+{
+  "name": "plot-store-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/hapi": "^21.3.3",
+    "@hapi/inert": "^7.1.0",
+    "@hapi/vision": "^7.0.3",
+    "hapi-swagger": "^17.2.1"
+  }
+}
