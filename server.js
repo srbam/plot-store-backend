@@ -12,8 +12,8 @@ const init = async () => {
 
     const swaggerOptions = {
         info: {
-            title: 'API Documentation',
-            version: '1.0.0', // ou a versão atual do seu pacote
+            title: 'PlotStore Documentation',
+            version: '1.0.0',
         }
     };
 
