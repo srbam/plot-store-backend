@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",
@@ -12,6 +12,10 @@
     "@hapi/hapi": "^21.3.3",
     "@hapi/inert": "^7.1.0",
     "@hapi/vision": "^7.0.3",
-    "hapi-swagger": "^17.2.1"
+    "dotenv": "^16.4.2",
+    "hapi-swagger": "^17.2.1",
+    "mysql2": "^3.9.1",
+    "nodemon": "^3.0.3",
+    "sequelize": "^6.37.0"
   }
 }

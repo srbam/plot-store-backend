@@ -2,7 +2,8 @@ const Hapi = require('@hapi/hapi');
 const Inert = require('@hapi/inert');
 const Vision = require('@hapi/vision');
 const HapiSwagger = require('hapi-swagger');
-const routes = require('./routes');
+const routes = require('./src/routes');
+const { testConnection, syncModels } = require('./src/models/database/database');
 
 const init = async () => {
     const server = Hapi.server({
@@ -14,7 +15,8 @@ const init = async () => {
         info: {
             title: 'PlotStore Documentation',
             version: '1.0.0',
-        }
+        },
+        documentationPath: '/docs',
     };
 
     await server.register([
@@ -27,6 +29,9 @@ const init = async () => {
     ]);
 
     server.route(routes);
+
+    await testConnection();
+    await syncModels();
 
     await server.start();
     console.log('Server running on %s', server.info.uri);
