@@ -5,10 +5,14 @@ const HapiSwagger = require('hapi-swagger');
 const routes = require('./src/routes');
 const { testConnection, syncModels } = require('./src/models/database/database');
 
+
 const init = async () => {
     const server = Hapi.server({
         port: process.env.PORT,
-        host: process.env.HOST 
+        host: process.env.HOST,
+        routes: {
+            cors: true // Habilita o CORS para todas as rotas
+        }
     });
 
     const swaggerOptions = {
