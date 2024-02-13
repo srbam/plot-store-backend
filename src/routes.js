@@ -15,8 +15,8 @@ const routes = [
                     price: price,
                     image: image
                 });
-                console.log('New product created:', newProduct);
-                return h.response('Product created successfully').code(201);
+                console.log('New product created:');
+                return h.response().code(201);
               } catch (error) {
                 console.error('Error fetching products:', error);
                 return h.response('Internal server error').code(500);
