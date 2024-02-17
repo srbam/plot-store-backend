@@ -1,6 +1,6 @@
-const Product = require('./models/product');
+const Product = require('../models/product');
 
-const routes = [
+const productRoutes = [
     {
         method: 'POST',
         path: '/products',
@@ -10,12 +10,11 @@ const routes = [
             }
             try {
                 const { name, price, image } = request.payload;
-                const newProduct = await Product.create({
+                await Product.create({
                     name: name,
                     price: price,
                     image: image
                 });
-                console.log('New product created:');
                 return h.response().code(201);
               } catch (error) {
                 console.error('Error fetching products:', error);
@@ -51,6 +50,9 @@ const routes = [
             try {
                 const id = request.params.id;
                 const product = await Product.findByPk(id);
+                if(!product){
+                    return h.response('Product not found').code(404);
+                }
                 return product;
               } catch (error) {
                 console.error('Error fetching products:', error);
@@ -86,4 +88,4 @@ const routes = [
     },    
 ];
 
-module.exports = routes;
+module.exports = productRoutes;
