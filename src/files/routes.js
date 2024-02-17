@@ -14,7 +14,6 @@ const fileRoutes = [
             }
             try {
                 const image = request.payload.image;
-                console.log(request.payload.image);
                 const imageName = uuidv4() + '.jpg';
                 const imagePath = path.join(uploadsDirectory, imageName);
                 fs.writeFileSync(imagePath, image, 'base64');
