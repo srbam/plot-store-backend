@@ -12,7 +12,7 @@ const Product = sequelize.define('products', {
   },
   image: {
     type: DataTypes.STRING,
-    allowNull: true
+    allowNull: false
   }
 });
 
