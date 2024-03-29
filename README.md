@@ -8,4 +8,4 @@ Run `npm install` to install node dependencies.
 
 ## Build and Run project
 
-Run `npm start` for a dev server. Navigate to `http://localhost:4200/`.
+Run `npm start` for a dev server. Server will start at `http://localhost:3000/`.
