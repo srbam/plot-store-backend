@@ -67,7 +67,29 @@ const fileRoutes = [
                 return h.response('Internal server error').code(500);
             }
         },
+    },
+    {
+        method: 'DELETE',
+        path: '/files/{imageName}',
+        handler: (request, h) => {
+            try {
+                const imageName = request.params.imageName;
+                const imagePath = path.join(uploadsDirectory, imageName);
+    
+                if (!fs.existsSync(imagePath)) {
+                    return h.response('File not found').code(404);
+                }
+
+                fs.unlinkSync(imagePath);
+    
+                return h.response('Product deleted successfully').code(200);
+            } catch (error) {
+                console.error('Error retrieving file:', error);
+                return h.response('Internal server error').code(500);
+            }
+        },
     }
+    
     
 ];
 
