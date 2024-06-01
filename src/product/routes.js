@@ -75,7 +75,7 @@ const productRoutes = [
                     return h.response('Product not found').code(404);
                 }
                 await product.destroy();
-                return h.response('Product deleted successfully').code(200);
+                return h.response('Product deleted successfully').code(204);
             } catch (error) {
                 console.error('Error deleting product:', error);
                 return h.response('Internal server error').code(500);
